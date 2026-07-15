@@ -27,17 +27,19 @@ system_prompt = f"""
         I want personal information from this text that should be strictly based on this schema and give me json output.
         {schema} 
 """
-message_system = {"role": "system", "content": system_prompt}
-client = Groq(api_key=groq_api_key)
-model = "llama-3.3-70b-versatile"
-role = "user"
 complain = "My name is ashish singh. I live in delhi, and my age is 16 and I am pursuing B.Tech. I purchased i phone 17. Now this is not working. I have to exchange product or get full refund"
 prompt = f""" 
         This is user's complain from you need to extract user's personal information from this text {complain}
 """
+
+
+system_message = {"role": "system", "content": system_prompt}
+client = Groq(api_key=groq_api_key)
+model = "llama-3.3-70b-versatile"
+role = "user"
 message = {"role": role, "content": prompt}
 
-messages = [message_system, message]
+messages = [system_message, message]
 
 response = client.chat.completions.create(
     model=model, messages=messages, response_format=responses_format
