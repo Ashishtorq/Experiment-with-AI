@@ -39,7 +39,7 @@ For instance if a user compalin says he wants a refund then the category is Retu
 #FALLBACK
 If the issue is unrelated to any of the categories mentioned in constraints, then the answer should be OTHER
 This is a user complaint:
-My marriage is broke
+My laptop has love with me
 """
 
 print(llm_ans(bad_prompt))

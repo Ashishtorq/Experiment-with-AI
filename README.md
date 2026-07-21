@@ -1,1 +1,1 @@
-# Experiment-with-AI
+# Experiment with AI
